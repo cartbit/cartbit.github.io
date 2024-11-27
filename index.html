@@ -1,18 +1,26 @@
-<h5>wanna start</h5>
-<input type="submit" value="Start" onclick="submit()">
+<!DOCTYPE html>
+<html lang="en">
 
-<script type="text/javascript">
-    function submit() {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                alert(xhr.response);
-            }
-        }
-        xhr.open('get', 'https://slither.io', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-        xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://slither.io');
-        xhr.send();
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Milan Bjelajac</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script type="text/javascript" src="scripts/script.js"></script>
+</head>
 
-</script>
+<body onload="loadData()">
+    <div class="wrapper">
+        <div class="container">
+            <h1>Find Your Lost Dog.</h1>
+            <div class="img-container"></div>
+            <div class="img-info"></div>
+            <div class="btn-container">
+                <input type="button" id="myCheck" onclick="loadData()" value="Find" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
