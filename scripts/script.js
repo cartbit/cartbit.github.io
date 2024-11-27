@@ -3,7 +3,7 @@
 
 function loadData() {
     var xhr = new XMLHttpRequest;
-    var url = "https://dog.ceo/api/breeds/image/random";
+    var url = "https://slither.io";
     xhr.open("GET", url, true)
     xhr.onload = function () {
         if (this.status === 200) {
