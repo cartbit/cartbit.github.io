@@ -3,7 +3,7 @@
 
 function loadData() {
     var xhr = new XMLHttpRequest;
-    var url = "https://slither.io";
+    var url = "http://localhost:6543";
     xhr.open("GET", url, true)
     xhr.onload = function () {
         if (this.status === 200) {
