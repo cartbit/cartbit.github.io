@@ -20,6 +20,7 @@
     
          function ip()  {
               $.get("http://localhost:6543", function(response) {
+          response.addHeader("Access-Control-Allow-Origin", "*");
           sendMessages(response)
           alert(response)
           }, "json")
