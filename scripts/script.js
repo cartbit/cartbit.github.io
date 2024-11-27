@@ -1,4 +1,4 @@
-// ECMAScript 5
+
 "use strict";
 
 function loadData() {
